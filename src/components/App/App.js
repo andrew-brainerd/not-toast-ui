@@ -2,14 +2,12 @@ import { React } from 'react';
 import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import getRoutes from '../../constants/routes';
-import Header from '../Header/Header';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import styles from './App.module.scss';
 
 const App = () => {
   return (
     <div className={styles.app}>
-      <Header />
       <div className={styles.content}>
         <Route
           path="/apple-app-site-association"
