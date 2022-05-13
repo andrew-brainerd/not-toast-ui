@@ -1,0 +1,41 @@
+@import '../../styles/colors.scss';
+@import '../../styles/sizing.scss';
+
+.joinForm {
+  border-radius: 20px;
+  display: flex;
+  margin: 0 auto;
+  width: 75%;
+
+  .fieldContainer {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  .successText {
+    animation: fadeIn 1s;
+    color: $successGreen;
+    margin-bottom: 20px;
+    text-align: left; 
+  }
+}
+
+@media screen and (max-width: $minPageWidth) {
+  .joinForm {
+    width: 90%;
+
+    .fieldContainer {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
