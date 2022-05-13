@@ -1,8 +1,6 @@
 import { React } from 'react';
 import { Route } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
-import getRoutes from '../../constants/routes';
-import ScrollToTop from '../ScrollToTop/ScrollToTop';
+import Home from '../Home/Home';
 import styles from './App.module.scss';
 
 const App = () => {
@@ -13,24 +11,10 @@ const App = () => {
           path="/apple-app-site-association"
           onEnter={() => window.location.reload()}
         />
-        {getRoutes().map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
-            {({ match }) => (
-              <CSSTransition
-                in={match !== null}
-                timeout={300}
-                classNames='fadeAnimation'
-                unmountOnExit
-              >
-                <div className='fadeAnimation'>
-                  <ScrollToTop>
-                    <Component />
-                  </ScrollToTop>
-                </div>
-              </CSSTransition>
-            )}
-          </Route>
-        ))}
+        <Route
+          path="/"
+          component={Home}
+        />
       </div>
     </div>
   );
