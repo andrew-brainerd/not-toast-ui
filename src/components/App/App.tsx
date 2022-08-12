@@ -1,15 +1,23 @@
-import './App.css';
+import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router';
+import Loading from '../Loading/Loading';
+import styles from './App.module.scss';
 
-function App() {
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
+    <div className={styles.app}>
+      <header></header>
+      <div className={styles.content}>
+        {isLoading ? <Loading /> : <Outlet />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

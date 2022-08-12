@@ -1,19 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HttpsRedirect from 'react-https-redirect';
 import App from './components/App/App';
-import reportWebVitals from './reportWebVitals';
+// import Home from './Home/Home';
+import Property from './components/Property/Property';
+import './index.scss';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const AppleApp = () => {
+  window.location.reload();
+  return <></>;
+};
+
 root.render(
   <React.StrictMode>
-    <App />
+    <HttpsRedirect disabled={process.env.NODE_ENV === 'development'}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/apple-app-site-association" element={<AppleApp />} />
+          <Route path="/" element={<App />}>
+            <Route path="/properties/:propertyId" element={<Property />} />
+          </Route>
+          <Route path="*" element={<h1>Ur shit is missing</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </HttpsRedirect>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
