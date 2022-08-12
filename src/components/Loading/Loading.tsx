@@ -6,7 +6,7 @@ interface LoadingProps {
   message?: string
 }
 
-const Loading = ({ className, message }: LoadingProps) => {
+const Loading = ({ className, message }: LoadingProps): JSX.Element => {
   return (
     <div className={[styles.loading, className].join(' ')}>
       {message && <div className={styles.message}>{message}</div>}

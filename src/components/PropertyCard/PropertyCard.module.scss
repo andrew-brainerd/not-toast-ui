@@ -1,0 +1,17 @@
+.card {
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25px auto;
+  width: 500px;
+
+  .imageContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+    overflow: hidden;
+  }
+}

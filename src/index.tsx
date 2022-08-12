@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 import App from './components/App/App';
 // import Home from './Home/Home';
-import Property from './components/Property/Property';
+import Properties from './components/Properties/Properties';
+// import PropertyDetails from './components/PropertyDetails/PropertyDetails';
 import './index.scss';
 
 const root = ReactDOM.createRoot(
@@ -23,7 +24,8 @@ root.render(
         <Routes>
           <Route path="/apple-app-site-association" element={<AppleApp />} />
           <Route path="/" element={<App />}>
-            <Route path="/properties/:propertyId" element={<Property />} />
+            <Route path="/properties" element={<Properties />} />
+            {/* <Route path="/properties/:propertyId" element={<PropertyDetails />} /> */}
           </Route>
           <Route path="*" element={<h1>Ur shit is missing</h1>} />
         </Routes>

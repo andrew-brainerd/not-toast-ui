@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
-const Property = () => {
-  const { propertyId } = useParams();
+interface PropertyDetailProps {
+  propertyId: string
+}
 
+const PropertyDetail = ({ propertyId }: PropertyDetailProps) => {
   useEffect(() => {
     setTimeout(() => {
       window.location.replace(`nottoast://properties/${propertyId}`);
@@ -15,4 +16,4 @@ const Property = () => {
   );
 };
 
-export default Property;
+export default PropertyDetail;
